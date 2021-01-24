@@ -1,0 +1,60 @@
+.profle-container{
+    width: 800px;
+    max-height: 100%;
+    box-shadow: 0 4px 5px -2px rgb(131, 128, 128);
+    background-color: #FFF;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.profle-container img{
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    display: block;
+    margin: auto;
+}
+
+.profle-container p{
+    padding-top: 20px;
+    text-align: center;
+    color: #17E9E0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.profle-container .details{
+    max-height: 100%;
+    padding: 30px 100px;
+    border:rgb(131, 128, 128);
+}
+
+.details h4{
+    text-align: left;
+}
+
+.details p{
+    text-align: left;
+    color: #414141;
+}
+
+input[type=text], input[type=password] {
+    width: 500px;
+    border: none;
+    border-radius: 9px; 
+    background-color: #F0EFEF;
+    padding: 5px 10px;
+    outline: none;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    outline: none !important;
+    border: 3px solid #FFCD1F;
+}
+
+::placeholder {
+    color: #bbbec7;
+    font-size: 13px;
+}
+
