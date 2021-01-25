@@ -20,7 +20,8 @@
 
         if (count($errors)==0) {
             
-            $sql = "INSERT INTO instructor(name,username,password) VALUES ('$name','$username','$password')";
+            $sql = "INSERT INTO instructor(name,username,password,imgName,imgDir) 
+            VALUES ('$name','$username','$password','','')";
             mysqli_query($conn,$sql);
             $_SESSION['name'] = $name;
             $_SESSION['username'] = $username;
