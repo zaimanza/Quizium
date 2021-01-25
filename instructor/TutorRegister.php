@@ -23,7 +23,7 @@ include("../database/query/Tutor.php");
     </header>
     <div class="container">
         <div class="inner-box">
-            <h1>Sign up here, <p style="text-decoration: underline;">Tutors!</p></h1>
+            <h1>Sign up here, <p style="text-decoration: underline;">Instructors!</p></h1>
             <div class="subtext">
                 let the fun begin
             </div>

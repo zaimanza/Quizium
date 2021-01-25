@@ -1,4 +1,6 @@
-
+.website-name {
+    display: flex;
+}
 .website-name ul{
     display: flex;
     align-items: center;

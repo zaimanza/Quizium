@@ -23,7 +23,7 @@ include("../database/query/Tutor.php");
     </header>
     <div class="container">
         <div class="inner-box">
-            <h1>Welcome back,<p style="text-decoration: underline;">Tutors!</p></h1>
+            <h1>Welcome back,<p style="text-decoration: underline;">Instructors!</p></h1>
             <div class="subtext">
                 sign in to continue
             </div>
@@ -38,7 +38,7 @@ include("../database/query/Tutor.php");
             </form>
             <br><br>
             <div class="subtext">
-                Not a tutor? <a href="../student/StudentLogin.php">Click here</a>
+                Not an instructor? <a href="../student/StudentLogin.php">Click here</a>
             </div>
         </div>
     </div>

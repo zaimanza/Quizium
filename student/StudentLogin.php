@@ -38,7 +38,7 @@ include("../config/db_connect.php");
             </form>
             <br><br>
             <div class="subtext">
-                Not a student? <a href="../instructor/TutorLogin.html">Click here</a>
+                Not a student? <a href="../instructor/TutorLogin.php">Click here</a>
             </div>
         </div>
     </div>
