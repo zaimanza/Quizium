@@ -1,4 +1,7 @@
 <?php
-$query = "SELECT * FROM quiz ORDER BY quizID desc";
+$id = $_SESSION["instructorID"];
+$query = "SELECT * FROM quiz 
+WHERE InstructorID = $id 
+ORDER BY quizID desc";
 $result = $conn->query($query);
 ?>

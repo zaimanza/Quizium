@@ -1,3 +1,12 @@
+<?php 
+include ("../config/db_connect.php");
+$id = $_GET['quizID'];
+
+$query = "SELECT * FROM quiz 
+          WHERE quizid = $id";
+$result = $conn->query($query);
+
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -55,57 +64,71 @@
         </header>
         <main>
             <div class="report-box">
-                <div class="heading">
-                    Quiz Analysis Report: title
+                <div class="heading"><?php
+                if($result-> num_rows >0) {
+                        while ($row = $result-> fetch_assoc()) {?>
+                    Quiz Analysis Report: <?php echo $row["quizName"];?>
                 </div>
                 <div class="analysis">
                     <div class="boxes">
-                        93.75%
-                        <p>Passing Rate</p>
+                        <?php echo $row["dateOpen"];?>
+                        <p>Date start</p>
                     </div>
                     <div class="boxes">
-                        test
-                        <p>Pass Count</p>
+                    <?php echo $row["dateClose"];?>
+                        <p>Date end</p>
                     </div>
                     <div class="boxes">
-                        test
-                        <p>Average Attempt per Class</p>
+                    <?php echo $row["quizCode"];?>
+                        <p>Quiz code</p>
                     </div>
-                    <div class="boxes">
-                        test
-                        <p>Failing Rate</p>
-                    </div>
-                    <div class="boxes">
-                        test
-                        <p>Fail Count</p>
-                    </div>
-                    <div class="boxes">
-                        test
-                        <p>Average Attempt per Fail</p>
-                    </div>
+                    <?php }
+                    }?>
                 </div>
+
+                <?php 
+                
+                $query = "SELECT answeredquiz.*, student.* 
+                        FROM answeredquiz INNER JOIN student 
+                        ON answeredquiz.StudentID = student.studentID 
+                        WHERE answeredquiz.quizID = $id";
+
+                $mql = "SELECT answeredquiz.*, student.* 
+                FROM answeredquiz INNER JOIN student ON answeredquiz.StudentID = student.studentID 
+                WHERE answeredquiz.quizID = $id";
+                $result2 = $conn->query($mql);
+                $ron = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+
+                $result1 = mysqli_query($conn, $query);
+
+                ?>
                 <div class="table-container">
                 <table>
                     <tr>
-                        <th>No.</th><th>Student name</th><th>Total correct</th><th>Total wrong</th><th>Mark(%)</th><th>Pass/Fail</th>
+                        <th>No.</th><th>Student name</th><th>Mark(%)</th><th>Pass/Fail</th>
                     </tr>
+                    <?php
+                    if($result1-> num_rows >0) {
+                        $i = 1;
+                         while ($row = $result1-> fetch_assoc()) {?>
                     <tr>
-                        <td>1</td>
-                        <td>Database</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button class="button btnPass">Pass</button></td>
+                        <td><?php  echo $i; ?></td>
+                        <td><?php  echo $row["studentName"]?></td>
+                        <td><?php  echo $row["mark"]?></td>
+                        <td>
+                        <?php
+                        if($row["mark"] >= 50)
+                        {
+                            ?><button class="button btnPass">Pass</button><?php
+                        }
+                        else
+                        {
+                            ?><button class="button btnFail">Fail</button><?php
+                        }
+                        ?></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Human-Computer Interaction</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button class="button btnFail">Fail</button></td>
-                    </tr>
-                   
+                    <?php $i++; }
+                    } ?>
                 </table>
                 </div>
             </div>

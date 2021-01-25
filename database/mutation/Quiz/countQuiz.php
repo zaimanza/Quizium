@@ -1,6 +1,8 @@
 <?php 
+$id = $_SESSION["instructorID"];
 $sql = "SELECT COUNT(*) c
-        FROM quiz";
+        FROM quiz
+        WHERE InstructorID = $id";
       //WHERE instructorID = $d
 $result = $conn->query($sql);
 

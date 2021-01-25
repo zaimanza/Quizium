@@ -517,6 +517,31 @@ i{
     padding: 20px 0;
 }
 
+.history-box{
+    background-color: #FFF;
+    width: 700px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 5px -2px rgb(131, 128, 128);
+}
+
+.history-box h4{
+    padding: 40px;
+}
+
+.history-box .chartbox{
+    height: 330px;
+    padding: 40px;
+}
+
+.history-box .details{
+    height: 200px;
+    display: block;
+    margin: auto;
+    padding: 40px;
+}
+
 
 
 

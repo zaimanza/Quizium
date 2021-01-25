@@ -8,7 +8,11 @@ $imageURL1 = "";
             } else {
                 $imageURL1 = "../image/fox.png";
             }
+
+            
 ?>
+
+
 
 <html>
 <head>

@@ -1,7 +1,6 @@
-<?php 
-include("../config/db_connect.php");
-include("../database/query/instructorProfile.php");
-?>
+<?php include("../config/db_connect.php");
+
+include("../database/query/instructorProfile.php");?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -85,7 +84,7 @@ include("../database/query/instructorProfile.php");
             <div class="quiz-list">
                 <table>
                     <tr>
-                        <th>No.</th><th>Quiz name</th><th>Start date</th><th>End date</th><th>Class average</th><th>Action</th>
+                        <th>No.</th><th>Quiz name</th><th>Start date</th><th>End date</th><th>Action</th>
                     </tr>
                     <?php 
                     include("../database/mutation/quiz/viewquiz.php"); 
@@ -99,11 +98,11 @@ include("../database/query/instructorProfile.php");
                         <td><?php echo $row["quizName"]?></td>
                         <td><?php echo $row["dateOpen"]?></td>
                         <td><?php echo $row["dateClose"]?></td>
-                        <td><?php echo $row["classAverage"]?></td>
-                        <td><a href="quiz-report.php"><button class="button btnView">View</button></a></td>
+                        <td><a href="quiz-report.php?quizID=<?php echo $row['quizID']?>"><button class="button btnView">View</button></a></td>
                     </tr>
                    <?php $i++; }
                    }?>
+
                 </table>
             </div>
         </main>

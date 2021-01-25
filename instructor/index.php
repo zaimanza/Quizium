@@ -85,6 +85,7 @@ include("../database/query/instructorProfile.php");
             <?php 
             include("../database/mutation/quiz/viewquiz.php"); 
             
+            if($result != null){
                   if($result-> num_rows >0) {
                   $i = 1;
                   while ($row = $result-> fetch_assoc()) {
@@ -110,7 +111,7 @@ include("../database/query/instructorProfile.php");
                 </div>
             </div>
             <?php }
-            } ?>
+            } }?>
             </div>
            <a href="create.php"><button class="button btn1"><span>Create</span></button></a>
 

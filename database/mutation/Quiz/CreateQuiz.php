@@ -8,7 +8,7 @@
     //the idea is, once quiz dah create, guna the id to insert quizquestions in this same file
 
         //instructorID
-        $instructorID = 2;
+        $instructorID = $_SESSION["instructorID"];
         //quizCode dummy
         $quizCode = generateKey();
         $quizDescription = $_POST['description'];
@@ -21,7 +21,7 @@
         if(array_filter($errors)){
 
         } else {
-            $instructorID = mysqli_real_escape_string($conn, '2');
+            $instructorID = mysqli_real_escape_string($conn, $instructorID);
             $quizName = mysqli_real_escape_string($conn, $_POST['quizName']);
             $openDate = mysqli_real_escape_string($conn, date('Y-m-d H:i:s', strtotime(str_replace('-','/',$_POST['openDate']))));
             $closeDate = mysqli_real_escape_string($conn, date('Y-m-d H:i:s', strtotime(str_replace('-','/',$_POST['closeDate']))));
