@@ -1,6 +1,4 @@
 <?php
-    //DATABASE
-    include("../config/db_connect.php");
     
     session_start();
     $name = $username = $password = '';

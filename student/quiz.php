@@ -45,7 +45,7 @@ $result1 = $conn->query($sql);
 
             <?php         
             if($result1-> num_rows > 0) {
-                $index = 0;
+                $index = 1;
                 while ($row = $result1-> fetch_assoc()) { ?>
             <div data-repeater-list="group-a"class="question-details">
              <div data-repeater-item class="repeater-container">

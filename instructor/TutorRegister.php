@@ -29,8 +29,8 @@ include("../database/query/Tutor.php");
             </div>
             <form method="post">
                 <?php include('../database/query/errors.php'); ?>
-                <label>Full name</label><br><input type="text" name="name"><br><br>
-                <label>Username</label><br><input type="text" name="username">
+                <label>Full name</label><br><input type="text" name="name" required><br><br>
+                <label>Username</label><br><input type="text" name="username" required>
                 <br><br><label>Password</label><br><input type="password" name="password" required>
                 <br><br>
                 <div class="ketengahplis">

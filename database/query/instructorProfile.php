@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-$id = 2;
+$id = $_SESSION["instructorID"];
 
 $sql = "SELECT * FROM `instructor`
         WHERE `instructorID` = $id";

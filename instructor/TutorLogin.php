@@ -1,5 +1,5 @@
 <?php
-
+include("../config/db_connect.php");
 include("../database/query/Tutor.php");
 ?>
 <!DOCTYPE html>

@@ -1,4 +1,7 @@
-<?php include("../config/db_connect.php");?>
+<?php 
+include("../config/db_connect.php");
+include("../database/query/instructorProfile.php");
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -14,7 +17,16 @@
 <body>
     <div class="sidebar">
         <div class="sidebar-user">
-            <img src="../image/fox.png">
+        <?php 
+            $imageURL1 = "";
+            $row1 = $result-> fetch_assoc();
+            if(!empty($row1["imgName"])){
+                $imageURL1 = '../imgInstructor/'.$row1["imgName"];
+            } else {
+                $imageURL1 = "../image/fox.png";
+            }
+        ?>
+            <img src="<?php echo $imageURL1;?>">
             <div class="user-image">
                 <p>Instructor</p>
             </div>

@@ -1,9 +1,9 @@
 <?php 
     include ("../../../config/db_connect.php");
     //start session
-    $studentid = 1;
+    session_start();
+    $studentid = $_SESSION["studentID"];
     $answer = $_POST['answer'];
-    //var_dump($answer);
     $quizid = $_POST["quizid"];
 
     $sql = "SELECT * FROM quizquestion
@@ -11,7 +11,7 @@
     $result = $conn->query($sql);
 
     if($result-> num_rows > 0) {
-        $i = 0;
+        $i = 1;
         $mark = 0;
         while ($row = $result-> fetch_assoc()) { 
             if($row['questionType'] == 'text'){
@@ -28,14 +28,17 @@
             }   
             $i++;
         }
-        echo $mark;
+        $i--;
+        $percent = ($mark/$i)*100;
 
-        $sqlInsertMark = "INSERT INTO answeredquiz VALUES(NULL, $studentid,'$mark','$quizid')";
+        $sqlInsertMark = "INSERT INTO answeredquiz VALUES(NULL, $studentid,'$percent','$quizid')";
         $result = $conn->query($sqlInsertMark);
-        echo $last_id = mysqli_insert_id($conn);
+        $last_id = mysqli_insert_id($conn);
 
-        if($result == TRUE)
+        if($result == TRUE){
             header("Location: ../../../student/quiz-result.php?quizid=$quizid&id=$last_id");
+        }
+            
         else
             echo 'query error: ' . mysqli_error($conn);
 
