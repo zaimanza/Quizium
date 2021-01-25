@@ -14,31 +14,31 @@
 <body>
     <div class="sidebar">
         <div class="sidebar-user">
-            <img src="../image/bear.png">
+            <img src="../image/fox.png">
             <div class="user-image">
-                <p>Student</p>
+                <p>Instructor</p>
             </div>
         </div>
         <div class="sidebar-menu">
             <hr>
             <ul>
                 <li>
-                    <a href="StudentHome.php">
+                    <a href="index.php">
                         <span>Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="StudentProfile.php" >
+                    <a href="profile.php" >
                         <span>My Profile</span>
                     </a>
                 </li>
                 <li class="active">
                     <a href="#">
-                        <span>History</span>
+                        <span>Report</span>
                     </a>
                 </li>
                 <li>
-                    <a href="database/query/logout.php?action=Logout">
+                    <a href="">
                         <span>Log out</span>
                     </a>
                 </li>
@@ -87,8 +87,8 @@
                         <td><?php echo $row["quizName"]?></td>
                         <td><?php echo $row["dateOpen"]?></td>
                         <td><?php echo $row["dateClose"]?></td>
-                        <td><?php echo $row["mark"]?></td>
-                        <td><a href="StudentOneReport.php?id=<?php echo $row['answeredQuizID']; ?>"><button class="button btnView">View</button></a></td>
+                        <td><?php echo $row["grade"]?></td>
+                        <td><a href="StudentOneReport.php?id=<?php echo $pizza['answeredquizID']; ?>"><button class="button btnView">View</button></a></td>
                     </tr>
                    <?php $i++; }
                    }?>
