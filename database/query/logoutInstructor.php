@@ -4,7 +4,7 @@
     if ($action=='Logout')
     {
       session_destroy();
-      unset($_SESSION['matrix']);
+      unset($_SESSION['username']);
       header('location: ../../index.html');
     }
 

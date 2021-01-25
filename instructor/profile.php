@@ -42,7 +42,7 @@ include("../database/query/instructorProfile.php");
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="../database/query/logoutInstructor.php?action=Logout">
                         <span>Log out</span>
                     </a>
                 </li>

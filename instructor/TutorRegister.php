@@ -31,7 +31,7 @@ include("../database/query/Tutor.php");
                 <?php include('../database/query/errors.php'); ?>
                 <label>Full name</label><br><input type="text" name="name"><br><br>
                 <label>Username</label><br><input type="text" name="username">
-                <br><br><label>Password</label><br><input type="password">
+                <br><br><label>Password</label><br><input type="password" name="password" required>
                 <br><br>
                 <div class="ketengahplis">
                     <input type="submit" name="Register" value="Register">

@@ -62,7 +62,7 @@
                 { 
                     $_SESSION['instructorID'] = $row['instructorID'];
                 }
-                header('location: TutorHome.php');  //CHANGE PAGE DIRECTORY
+                header('location: ../instructor/index.php');  //CHANGE PAGE DIRECTORY
             }
             else {
                 array_push($errors, "The username/password is incorrect");
