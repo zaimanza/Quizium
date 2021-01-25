@@ -6,12 +6,12 @@
     $matrix = $password = $studentName = '';
     $errors = array();
     
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "quizium";
+    // $hostname = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $dbname = "quizium";
 
-    $db = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Connection failed");
+    // $db = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Connection failed");
     
     //register
     if(isset($_POST['Register']))
@@ -23,7 +23,7 @@
         if (count($errors)==0) {
             
             $sql = "INSERT INTO student(matrixNum,studentName,spassword) VALUES ('$matrix','$studentName','$password')";
-            mysqli_query($db,$sql);
+            mysqli_query($conn,$sql);
             $_SESSION['matrix'] = $matrix;
             $_SESSION['password'] = $password;
             $_SESSION['studentName'] = $studentName;
@@ -55,7 +55,7 @@
 
             $query = "SELECT * FROM student
             WHERE matrixNum = '$matrix' AND spassword = '$password'";
-            $result = mysqli_query($db,$query);
+            $result = mysqli_query($conn,$query);
 
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['matrix'] = $matrix;

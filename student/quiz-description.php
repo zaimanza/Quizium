@@ -1,5 +1,5 @@
 <?php 
-include ("../config/db_connect.php");
+include("../config/db_connect.php");
 $code = $_GET['quizCode'];
 $sql = "SELECT * FROM quiz q
         JOIN instructor i

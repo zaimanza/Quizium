@@ -1,17 +1,17 @@
 <?php
     //DATABASE
-    include ("../config/db_connect.php");
+    include("../config/db_connect.php");
     
     session_start();
     $name = $username = $password = '';
     $errors = array();
     
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "quizium";
+    // $hostname = "localhost";
+    // $username = "root";
+    // $password = "";
+    // $dbname = "quizium";
 
-    $db = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Connection failed");
+    // $db = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Connection failed");
     
     //register
     if(isset($_POST['Register']))
@@ -23,7 +23,7 @@
         if (count($errors)==0) {
             
             $sql = "INSERT INTO instructor(name,username,password) VALUES ('$name','$username','$password')";
-            mysqli_query($db,$sql);
+            mysqli_query($conn,$sql);
             $_SESSION['name'] = $name;
             $_SESSION['username'] = $username;
             $_SESSION['instructorID'] = $instructorID;
@@ -52,7 +52,7 @@
 
             $query = "SELECT * FROM instructor
             WHERE username = '$username' AND password = '$password'";
-            $result = mysqli_query($db,$query);
+            $result = mysqli_query($conn,$query);
 
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['username'] = $username;
