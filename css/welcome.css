@@ -1,0 +1,72 @@
+
+.website-name ul{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    padding-left: 1000px;
+}
+
+li{
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.subtext{
+    font-weight: normal;
+}
+
+
+.hyperlink-btn{
+    padding:0.7em;
+    border-radius: 25px;
+    background-color: #FCCD05;
+    text-align: center; 
+}
+
+.caption p{
+    font-weight: 600;
+}
+
+.hyperlink-btn a{   
+    color: white;
+}
+
+.get-started{
+    width:120px;
+}
+
+.container
+{
+    justify-content: center;
+    margin-top: 15%;
+    display: flex;
+    height: 400px;
+}
+
+.right-side img{
+    width:500px;
+    height: auto;
+}
+
+.left-side{
+    width:380px;
+}
+
+.smalltxt-c{
+    display: flex;
+}
+
+.hyperlink-bold a{
+    color: black;
+    font-weight: 800;
+    padding:0 0.3em;
+    text-decoration: underline;
+}

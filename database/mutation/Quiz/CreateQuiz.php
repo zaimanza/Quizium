@@ -16,7 +16,7 @@
         $openDate = date('Y-m-d H:i:s', strtotime($_POST['openDate']));  
         $closeDate = date('Y-m-d H:i:s', strtotime($_POST['closeDate']));
         $group = $_POST['group-a'];
-        //radio1-3, text1-3 from create.php
+
 
         if(array_filter($errors)){
 

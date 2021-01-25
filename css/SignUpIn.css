@@ -1,0 +1,58 @@
+.container{
+    justify-content: center;
+    margin-top: 13%;
+    display: flex;
+    height: 400px;
+}
+
+.inner-box{
+    width:350px;
+    height: inherit;
+}
+
+h1 , .subtext{
+    text-align: center;
+}
+
+form{
+    padding-top: 10%;
+}
+
+form a, a{
+
+    text-decoration: underline;
+    color:#FCCD05;
+    font-weight: bold;
+}
+form a{
+    padding-left: 10px;
+}
+a{
+    padding-left:3px;
+}
+.ketengahplis{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='text'], input[type='password']{
+    width: 350px;
+    height: 40px;
+    background-color: #F0EFEF;
+    border-radius: 9px;
+    border: none;
+    }
+}
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='submit']{
+    background-color: #A64AC9;
+    padding:0.7em 2em;
+    color: white;
+    font-weight: bold;
+    border-radius: 22px;
+    border: none;
+    }
+}
