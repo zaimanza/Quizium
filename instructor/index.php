@@ -84,10 +84,10 @@ include("../database/query/instructorProfile.php");
             <div class="card-container">
             <?php 
             include("../database/mutation/quiz/viewquiz.php"); 
-            if($result != null){
-                  if($result-> num_rows >0) {
+            if($result1 != null){
+                  if($result1-> num_rows >0) {
                   $i = 1;
-                  $results = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                  $results = mysqli_fetch_all($result1, MYSQLI_ASSOC);
                   var_dump($results);
                   foreach($results as $row) : 
             ?>
