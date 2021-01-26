@@ -85,9 +85,9 @@ include("../database/query/instructorProfile.php");
             <?php 
             include("../database/mutation/quiz/viewquiz.php"); 
             if($result != null){
-                  if($result-> num_rows >0) {
-                  $i = 1;
-                  while ($row = $result-> fetch_assoc()) {
+                    $i = 1;
+                    while ($row = $result-> fetch_assoc()) {
+                    var_dump($row);
             ?>
             <div class="card-quiz">
                 <div class="quiz-name">
@@ -109,7 +109,7 @@ include("../database/query/instructorProfile.php");
                     <i class="far fa-copy" onClick="copy2Clipboard()"></i>
                 </div>
             </div>
-            <?php }
+            <?php 
             } }?>
             </div>
            <a href="create.php"><button class="button btn1"><span>Create</span></button></a>
