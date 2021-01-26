@@ -6,7 +6,6 @@ if(isset($_POST["update"])){
 
         $id = $_SESSION["instructorID"];
         $name = $_POST["name"];
-        $oldPass = $_POST["oldPass"];
         $newPass = $_POST["newPass"];
         
 

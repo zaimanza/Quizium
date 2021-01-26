@@ -82,11 +82,9 @@ $imageURL1 = "";
                     <div class="details">
                     
                         <p>Name</p>
-                        <input type="text" name="name" value="<?php echo $row1["name"];?>">
-                        <p>Old Password</p>
-                        <input type="password" name="oldPass">
-                        <p>New Password</p>
-                        <input type="password" name="newPass">               
+                        <input type="text" name="name" value="<?php echo $row1["name"];?>" >
+                        <p>Password</p>
+                        <input type="password" name="newPass" required>               
                     </div>
 
                     <input type="submit" name="update" value="Save" id="update" class="button btn2">
