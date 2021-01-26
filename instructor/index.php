@@ -85,7 +85,7 @@ include("../database/query/instructorProfile.php");
             <?php 
             include("../database/mutation/quiz/viewquiz.php"); 
             if($result != null){
-                if($result-> num_rows >0) {
+                if(mysqli_num_rows($result) > 0) {
                     $i = 1;
                     var_dump($result);
                     while ($row = $result-> fetch_assoc()) {
