@@ -88,6 +88,7 @@ include("../database/query/instructorProfile.php");
                   if($result-> num_rows >0) {
                   $i = 1;
                   $results = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                  var_dump($results);
                   foreach($results as $row) : 
             ?>
             <div class="card-quiz">
