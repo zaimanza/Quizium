@@ -84,7 +84,7 @@ include("../database/query/instructorProfile.php");
             <div class="card-container">
             <?php 
             include("../database/mutation/quiz/viewquiz.php"); 
-            
+            var_dump($result);
             if($result != null){
                   if($result-> num_rows >0) {
                   $i = 1;
