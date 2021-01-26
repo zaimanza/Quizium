@@ -43,8 +43,10 @@ if(isset($_POST["update"])){
         WHERE instructorID = $id";
                 
         if(mysqli_query($conn, $sql)){
-                header("Location: ../../instructor/profile.php");
-                echo "<script> alert('Profile updated successfully!') </script>";
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                        window.alert('Profile successfully updated!')
+                        window.location.href='../../instructor/profile.php'
+                       </SCRIPT>");
         } else {
                 echo 'query error: ' . mysqli_error($conn);
         }

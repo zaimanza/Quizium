@@ -206,7 +206,21 @@ hr {
     color: #FFF;
     padding: 6px;
     display: block;
-    margin: auto;
+    margin: auto 5px;;
+}
+
+.btn4 {
+    background-color: red;
+    width: 107px;
+    padding-left: 34px;
+    padding-right: 34px;
+    font-size: 16px;
+    font-weight: 5px;
+    border-radius: 37px;
+    color: #FFF;
+    padding: 6px;
+    display: block;
+    margin: auto 5px;;
 }
 
 .btnLeave {

@@ -10,11 +10,15 @@ include("../config/db_connect.php");
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         <style>
             .alert-error{
+                margin: 5px 0px;
+                padding: 5px 0px;
                 text-align:center;
-                color:red;
+                color: #CD0618;
                 font-weight:500;
+                border: solid red;
+                border-radius: 25px;
             } 
-    </style>
+        </style>
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body bgcolor="#A64AC9">
@@ -31,7 +35,10 @@ include("../config/db_connect.php");
                 <div class="code-input">
                     <input type="text" name="code" placeholder="ENTER CODE">
                 </div>
-                <input type="submit" name="submit" value="Go" class="button btn3">
+                <div style="display: flex; align: center; padding-left: 30px; ">  
+                    <a href="studenthome.php"><input value="Cancel" class="button btn4"></a>
+                    <input type="submit" name="submit" value="Go >" class="button btn3">
+                </div>
                 
             </form>
         </div>

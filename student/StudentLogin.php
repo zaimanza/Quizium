@@ -29,8 +29,8 @@ include("../config/db_connect.php");
             </div>
             <form method="POST" action="">
                 <?php include('../database/query/errors.php'); ?>
-                <label>Matrix Number</label><br><input type="text" name="matrix">
-                <br><br><label>Password</label><br><input type="password" name="password">
+                <label>Matrix Number</label><br><input type="text" name="matrix" required>
+                <br><br><label>Password</label><br><input type="password" name="password" required>
                 <br><br>
                 <div class="ketengahplis">
                     <input type="submit" value="Login" name="Login"><a href="StudentRegister.php">Sign up</a>

@@ -24,8 +24,11 @@
 
             if(mysqli_query($conn, $sql)){
                 $quizID = mysqli_insert_id($conn);
-                echo "New record created successfully. Last inserted ID is: " . $quizID; //TODO: Check balik
-                header('Location: ../../../instructor/index.php');
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                        window.alert('Quiz successfully updated!')
+                        window.location.href='../../../instructor/index.php'
+                       </SCRIPT>");
+                //header('Location: ../../../instructor/index.php');
             } else {
                 echo 'query error: ' . mysqli_error($conn);
             }

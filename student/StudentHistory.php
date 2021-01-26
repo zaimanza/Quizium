@@ -73,7 +73,7 @@
             <div class="quiz-list">
                 <table>
                     <tr>
-                        <th>No.</th><th>Quiz name</th><th>Start date</th><th>End date</th><th>Score</th><th>Action</th>
+                        <th>No.</th><th>Quiz name</th><th>Start date</th><th>End date</th><th>Score</th>
                     </tr>
                     <?php 
                         include("../database/query/OneQuiz.php"); 
@@ -88,7 +88,6 @@
                         <td><?php echo $row["dateOpen"]?></td>
                         <td><?php echo $row["dateClose"]?></td>
                         <td><?php echo $row["mark"]?></td>
-                        <td><a href="StudentOneReport.php?id=<?php echo $row['answeredQuizID']; ?>"><button class="button btnView">View</button></a></td>
                     </tr>
                    <?php $i++; }
                    }?>

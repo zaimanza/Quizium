@@ -31,9 +31,9 @@ include("../database/query/Student.php");
             </div>
             <form action="" method="post">
                 <?php include('../database/query/errors.php'); ?>
-                <label>Matrix number</label><br><input type="text" name="matrix">
-                <br><br><label>Full Name</label><br><input type="text" name="studentName">
-                <br><br><label>Password</label><br><input type="password" name="spassword">
+                <label>Matrix number</label><br><input type="text" name="matrix" required>
+                <br><br><label>Full Name</label><br><input type="text" name="studentName" required>
+                <br><br><label>Password</label><br><input type="password" name="spassword" required>
                 <br><br>
                 <div class="ketengahplis">
                     <input type="submit" class="btn btn-primary"  name="Register" value="Register">

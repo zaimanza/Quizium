@@ -1,5 +1,5 @@
 body{
-    background-color: #e5e5e5;
+    background-color: #FAFAFA;
 }
 
 .content{
@@ -73,6 +73,7 @@ body{
     margin-left:25px;
     width: 150px; height: auto;
     background-color: violet;
+    border-radius: 50%;
 }
 
 .change-img{
