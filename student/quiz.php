@@ -68,7 +68,7 @@ $result1 = $conn->query($sql);
                         <br>
                         <p>b. &nbsp <input type="radio" id="answer" name="answer[<?php echo $index?>]" value="<?php echo $row['answer2']?>"> &nbsp <?php echo $row['answer2']?></p>
                         <br>
-                        <p>c. &nbsp <input type="radio" id="answer" name="answer[<?php echo $index?>]" value="<?php echo $row['answer3']?>"> &nbsp <?php echo $row['asnwer3']?></p><?php
+                        <p>c. &nbsp <input type="radio" id="answer" name="answer[<?php echo $index?>]" value="<?php echo $row['asnwer3']?>"> &nbsp <?php echo $row['asnwer3']?></p><?php
                     }
                    ?> 
                 </div>

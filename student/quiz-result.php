@@ -3,6 +3,7 @@ include ("../config/db_connect.php");
 $quizid = $_GET['quizid'];
 $id = $_GET['id'];
 //session studentid
+session_start();
 $studentid = $_SESSION['studentID'];
 $sql = "SELECT * FROM `answeredquiz` aq 
         JOIN `quiz` q ON aq.quizID = q.quizID 
