@@ -18,20 +18,29 @@
         $username =  $_POST['username'];
         $password =  $_POST['password'];
 
-        if (count($errors)==0) {
-            
-            $sql = "INSERT INTO instructor(name,username,password,imgName,imgDir) 
-            VALUES ('$name','$username','$password','','')";
-            if(mysqli_query($conn,$sql)){
-                $_SESSION['name'] = $name;
-                $_SESSION['username'] = $username;
-                $_SESSION['instructorID'] = $instructorID;
-         
-                header('location: ./TutorLogin.php');
-            } else {
-                header('location: ./TutorLogin.php');
+        $select = "SELECT * FROM instructor WHERE username = '$username'";
+            $result = $conn->query($select);
+            $user = mysqli_fetch_assoc($result);
+
+            if ($user) { //if user exist
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                window.alert('Account with this username and password has already been registered! Login to your account')
+                window.location.href='./TutorLogin.php'
+                </SCRIPT>");
             }
-        }
+            else {
+                $sql = "INSERT INTO instructor(name,username,ipassword, imgName, imgDir) VALUES ('$name','$username','$password', '', '')";
+                mysqli_query($conn,$sql);
+
+                $_SESSION['username'] = $username;
+                $_SESSION['password'] = $password;
+                $_SESSION['instructorName'] = $name;
+                //$_SESSION['studentID'] = $studentID;
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                                    window.alert('Instructor account created successfully!')
+                                    window.location.href='./TutorLogin.php'
+                                     </SCRIPT>");
+            }
     }
 
     //login
@@ -53,7 +62,7 @@
         if(count($errors)==0){
 
             $query = "SELECT * FROM instructor
-            WHERE username = '$username' AND password = '$password'";
+            WHERE username = '$username' AND ipassword = '$password'";
             $result = mysqli_query($conn,$query);
 
             if (mysqli_num_rows($result) == 1) {

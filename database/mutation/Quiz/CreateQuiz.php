@@ -1,9 +1,9 @@
 <?php
     include("../../../config/db_connect.php");
     session_start();
-    $quizName = $openDate = $closeDate = $quizCode = $quizDescription = '';
+    $quizName = $openDate = $closeDate = $quizCode = $quizDescription = $numStudents = '';
     $errors = array('quizName'=>'','openDate'=>'',
-    'closeDate'=>'','quizCode'=>'','quizDescription'=>'');
+    'closeDate'=>'','quizCode'=>'','quizDescription'=>'', 'numStudents'=>'');
 
     //the idea is, once quiz dah create, guna the id to insert quizquestions in this same file
 
@@ -12,6 +12,7 @@
         //quizCode dummy
         $quizCode = generateKey();
         $quizDescription = $_POST['description'];
+        $numStudents = $_POST['numStudents'];
         $quizName = $_POST['quizName'];
         $openDate = date('Y-m-d H:i:s', strtotime($_POST['openDate']));  
         $closeDate = date('Y-m-d H:i:s', strtotime($_POST['closeDate']));
@@ -26,8 +27,8 @@
             $openDate = mysqli_real_escape_string($conn, date('Y-m-d H:i:s', strtotime(str_replace('-','/',$_POST['openDate']))));
             $closeDate = mysqli_real_escape_string($conn, date('Y-m-d H:i:s', strtotime(str_replace('-','/',$_POST['closeDate']))));
 
-            $sql = "INSERT INTO quiz(instructorID,quizName,dateOpen,dateClose,quizDescription,quizCode)
-            VALUES ('$instructorID', '$quizName','$openDate','$closeDate','$quizDescription', '$quizCode')";
+            $sql = "INSERT INTO quiz(instructorID,quizName,dateOpen,dateClose,quizDescription,quizCode,numStudents)
+            VALUES ('$instructorID', '$quizName','$openDate','$closeDate','$quizDescription', '$quizCode','$numStudents')";
 
 
             if(mysqli_query($conn, $sql)){

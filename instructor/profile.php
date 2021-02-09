@@ -56,6 +56,11 @@ $imageURL1 = "";
                     </a>
                 </li>
                 <li>
+                    <a href="InstructorFeedback.php">
+                        <span>Feedback</span>
+                    </a>
+                </li>
+                <li>
                     <a href="../database/query/logoutInstructor.php?action=Logout">
                         <span>Log out</span>
                     </a>
@@ -82,9 +87,10 @@ $imageURL1 = "";
                     <div class="details">
                     
                         <p>Name</p>
-                        <input type="text" name="name" value="<?php echo $row1["name"];?>" >
+                        <input type="text" name="name" value="<?php echo $row1["name"];?>">
                         <p>Password</p>
-                        <input type="password" name="newPass" required>               
+                        <input type="password" name="pass" required>
+             
                     </div>
 
                     <input type="submit" name="update" value="Save" id="update" class="button btn2">

@@ -20,16 +20,29 @@
         $password =  $_POST['spassword'];
         $studentName =  $_POST['studentName'];
 
-        if (count($errors)==0) {
-            
-            $sql = "INSERT INTO student(matrixNum,studentName,spassword) VALUES ('$matrix','$studentName','$password')";
-            mysqli_query($conn,$sql);
-            $_SESSION['matrix'] = $matrix;
-            $_SESSION['password'] = $password;
-            $_SESSION['studentName'] = $studentName;
-            $_SESSION['studentID'] = $studentID;
-            header('location: ./StudentLogin.php');
-        }
+            $select = "SELECT * FROM student WHERE matrixNum = $matrix";
+            $result = $conn->query($select);
+            $user = mysqli_fetch_assoc($result);
+
+            if ($user) { //if user exist
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                                    window.alert('Account with this matrix number has already been registered! Login to your account')
+                                    window.location.href='./StudentLogin.php'
+                                     </SCRIPT>");
+            }
+            else {
+                $sql = "INSERT INTO student(matrixNum,studentName,spassword) VALUES ('$matrix','$studentName','$password')";
+                mysqli_query($conn,$sql);
+
+                $_SESSION['matrix'] = $matrix;
+                $_SESSION['password'] = $password;
+                $_SESSION['studentName'] = $studentName;
+                //$_SESSION['studentID'] = $studentID;
+                echo ("<SCRIPT LANGUAGE='JavaScript'>
+                                    window.alert('Student account created successfully!')
+                                    window.location.href='./StudentLogin.php'
+                                     </SCRIPT>");
+            }
     }
 
     //login

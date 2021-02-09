@@ -46,6 +46,11 @@ $result = $conn->query($query);
                     </a>
                 </li>
                 <li>
+                    <a href="InstructorFeedback.php">
+                        <span>Feedback</span>
+                    </a>
+                </li>
+                <li>
                     <a href="../database/query/logoutInstructor.php?action=Logout">
                         <span>Log out</span>
                     </a>
@@ -65,9 +70,12 @@ $result = $conn->query($query);
         <main>
             <div class="report-box">
                 <div class="heading"><?php
+                $insTargetStud = '';
                 if($result-> num_rows >0) {
                         while ($row = $result-> fetch_assoc()) {?>
-                    Quiz Analysis Report: <?php echo $row["quizName"];?>
+                    Quiz Analysis Report: <?php echo $row["quizName"];
+                    $insTargetStud = $row["numStudents"];
+                    ?>
                 </div>
                 <div class="analysis">
                     <div class="boxes">
@@ -84,6 +92,22 @@ $result = $conn->query($query);
                     </div>
                     <?php }
                     }?>
+                    <div class="boxes">
+                        <?php 
+                            $cur = "SELECT COUNT(DISTINCT StudentID) FROM answeredquiz WHERE quizID= $id";
+
+                            $curCount = mysqli_query($conn, $cur);
+                            if($curCount-> num_rows >0) {
+                                while ($rox = $curCount-> fetch_assoc()) {
+
+                                    echo $rox["COUNT(DISTINCT StudentID)"];
+                                    echo " of ";
+                                    echo $insTargetStud;
+                                }
+                            }
+                        ?>
+                        <p>Students Answered</p>
+                    </div>
                 </div>
 
                 <?php 

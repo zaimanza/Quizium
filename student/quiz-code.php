@@ -24,7 +24,7 @@ include("../config/db_connect.php");
     <body bgcolor="#A64AC9">
     
         <div class="code-container">
-            <h4>Quizium</h4>
+                <a href="StudentHome.php"><h4>Quizium</h4></a>
             <form action="../database/query/findQuiz.php" method="GET">
             <?php 
                 if(isset($_GET['validate'])  == 'false'){
@@ -33,7 +33,7 @@ include("../config/db_connect.php");
                 </div> <?php
                 }?>
                 <div class="code-input">
-                    <input type="text" name="code" placeholder="ENTER CODE">
+                    <input type="text" name="code" placeholder="ENTER CODE" required>
                 </div>
                 <div style="display: flex; align: center; padding-left: 30px; ">  
                     <a href="studenthome.php"><input value="Cancel" class="button btn4"></a>

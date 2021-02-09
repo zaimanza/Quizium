@@ -55,6 +55,12 @@ include ("../database/mutation/quiz/viewquizbyid.php");
                              <input type="hidden" name="quizid" value="<?php echo $row["quizID"]?>">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                           <p class="title">NUMBER OF STUDENTS</p>
+                           <input type="number" name="numStudents" value="<?php echo $row["numStudents"]?>">
+                        </td>
+                    </tr>
                     <?php }
                    } ?>
                 </table>

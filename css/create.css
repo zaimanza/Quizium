@@ -11,7 +11,7 @@
     padding-left: 65px;
     padding-top: 55px;
     background-color: #FFF;
-    height: 300px;
+    height: 380px;
     width: 100%;
 }
 
@@ -28,7 +28,7 @@
     font-size: 13px;
 }
 
-input[type=text] {
+input[type=text], [type=number] {
     width: 500px;
     border: none;
     padding: 10px;

@@ -25,7 +25,7 @@ window.onclick = function(event) {
 }
 
 function copy2Clipboard(){
-  var copyText = document.getElementById("code");
+  var copyText = document.getElementById("code").value;
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");

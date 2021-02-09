@@ -13,7 +13,7 @@ body{
     background-color: white;
     width: 700px;
     color: #000000;
-    margin:140px auto;
+    margin:120px auto;
     padding-top:3%;
     padding-left:5%;
     padding-bottom: 2%;
@@ -111,6 +111,7 @@ body{
 .History-lists
 {
     margin-top: -10%;
+    margin-bottom: 40px;
 }
 
 .lect-name{

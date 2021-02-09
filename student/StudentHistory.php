@@ -38,6 +38,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="StudentFeedback.php">
+                        <span>Feedback</span>
+                    </a>
+                </li>
+                <li>
                     <a href="../database/query/logout.php?action=Logout">
                         <span>Log out</span>
                     </a>
@@ -50,26 +55,12 @@
         <header>
             <div class="website-name">
                 <h3>
-                <a href="index.php"><span>Quizium</span></a>
+                    <a href="StudentHome.php"><span>Quizium</span></a>
                 </h3>
             </div>
         </header>
         <main>
-            <div class="sorting">
-                <div class="quizTot">
-                    Quiz(<?php include ("../database/query/CountOneQuiz.php")?>)
-                </div>
-                <div class="sortBy">
-                    <p>Sort by:</p>
-                    <select name="sortBy">
-                        <option value="recent">Most recent</option>
-                        <option value="recent">Oldest</option>
-                    </select>
-                    <p>Search quiz:</p>
-                    <input type="text">
-                </div>
-            </div>
-
+             <h3 style="margin: 0px 60px; margin-top: 40px; color: #414141; font-size: 20px">List of taken quiz (<?php include ("../database/query/CountOneQuiz.php")?>)</h3>
             <div class="quiz-list">
                 <table>
                     <tr>
@@ -87,7 +78,7 @@
                         <td><?php echo $row["quizName"]?></td>
                         <td><?php echo $row["dateOpen"]?></td>
                         <td><?php echo $row["dateClose"]?></td>
-                        <td><?php echo $row["mark"]?></td>
+                        <td><?php echo $row["mark"]?>%</td>
                     </tr>
                    <?php $i++; }
                    }?>

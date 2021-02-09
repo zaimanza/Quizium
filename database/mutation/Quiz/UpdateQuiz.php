@@ -1,7 +1,7 @@
 <?php
     session_start();
     include ("../../../config/db_connect.php");
-    $quizName = $openDate = $closeDate = $description = '';
+    $quizName = $openDate = $closeDate = $description = $numStudents = '';
     
     //var_dump($_SESSION);
 
@@ -16,10 +16,11 @@
             $openDate = mysqli_real_escape_string($conn, date('Y-m-d H:i:s', strtotime(str_replace('-','/',$_POST['openDate']))));
             $closeDate = mysqli_real_escape_string($conn, date('Y-m-d H:i:s', strtotime(str_replace('-','/',$_POST['closeDate']))));
             $description = mysqli_real_escape_string($conn,  $_POST['description']);
+            $numStudents = mysqli_real_escape_string($conn,  $_POST['numStudents']);
 
             $sql = "UPDATE quiz
             SET instructorID='$instructorID', quizName='$quizName', 
-            dateOpen ='$openDate', dateClose ='$closeDate', quizDescription ='$description'
+            dateOpen ='$openDate', dateClose ='$closeDate', quizDescription ='$description', numStudents ='$numStudents'
             WHERE quizID = $quizid";
 
             if(mysqli_query($conn, $sql)){

@@ -46,6 +46,12 @@
                              <input type="datetime-local" name="closeDate" required>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                           <p class="title">NUMBER OF STUDENTS</p>
+                           <input type="number" name="numStudents" placeholder="Number of students to answer this quiz." required>
+                        </td>
+                    </tr>
                 </table>
             </div>
 

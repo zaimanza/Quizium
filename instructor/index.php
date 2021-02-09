@@ -50,6 +50,11 @@ include("../database/query/instructorProfile.php");
                     </a>
                 </li>
                 <li>
+                    <a href="InstructorFeedback.php">
+                        <span>Feedback</span>
+                    </a>
+                </li>
+                <li>
                     <a href="../database/query/logoutInstructor.php?action=Logout">
                         <span>Log out</span>
                     </a>
@@ -67,20 +72,7 @@ include("../database/query/instructorProfile.php");
             </div>
         </header>
         <main>
-            <div class="sorting">
-                <div class="quizTot">
-                    Quiz(<?php include ("../database/mutation/Quiz/countQuiz.php")?>)
-                </div>
-                <div class="sortBy">
-                    <p>Sort by:</p>
-                    <select name="sortBy">
-                        <option value="recent">Most recent</option>
-                        <option value="recent">Oldest</option>
-                    </select>
-                    <p>Search quiz:</p>
-                    <input type="text">
-                </div>
-            </div>
+        <h3 style="margin: 0px 60px; margin-top: 40px; color: #414141; font-size: 20px">List of Quizzes (<?php include ("../database/mutation/Quiz/countQuiz.php")?>)</h3>
             <div class="card-container">
             <?php 
             include("../database/mutation/quiz/viewquiz.php"); 
@@ -90,7 +82,7 @@ include("../database/query/instructorProfile.php");
                   $i = 1;
                   while ($row = $result-> fetch_assoc()) {
             ?>
-            <div class="card-quiz">
+            <div class="card-quiz" id="myUL">
                 <div class="quiz-name">
                     <p><?php echo $row["quizName"]?></p>
                     <a href="../database/mutation/quiz/deletequiz.php?id=<?php echo $row["quizID"]; ?>" class="left"><i class="fas fa-trash-alt" onClick="return confirm('Are you sure to remove this quiz?')" aria-hidden="true"></i></a>
@@ -103,7 +95,7 @@ include("../database/query/instructorProfile.php");
                 </div>
 
                 <div class="quiz-code">
-                    <p id="code"><?php echo $row["quizCode"]?></p>
+                    <input type="text" id="code" value="<?php echo $row["quizCode"]?>" disabled>
                 </div>
 
                 <div class="quiz-copy">
@@ -132,6 +124,7 @@ include("../database/query/instructorProfile.php");
     </div>
 
     <script src="../js/index.js"></script>
+    <script src="../js/filter.js"></script>
     </body>
 
 </html>

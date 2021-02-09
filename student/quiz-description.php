@@ -20,7 +20,7 @@ $result = $conn->query($sql);
      <header>
         <div class="website-name">
             <h3>
-            <a href="#"><span>Quizium</span></a>
+                <a href="StudentHome.php"><span>Quizium</span></a>
             </h3>
       </div>
         </header>
@@ -38,6 +38,8 @@ $result = $conn->query($sql);
             <?php }
         } ?>
         </div>
+        <div style="width: 110px; display: block; margin: auto;"> 
         <a href="quiz.php?quizcode=<?php echo $code?>"><button name="submit" class="button btn3">Go</button></a>
+        </div>
     </body>
 </html>
