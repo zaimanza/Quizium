@@ -8,6 +8,7 @@ As the world is shocked by the Covid-19 Pandemic, people are finding solutions t
 
 Online Quiz Platform will be used for education specifically for evaluation purposes. Users of this system are Instructors and Students. Instructors can create quizzes and students can answer quizzes created by their respective instructors using generated codes. The environment of the system can be used in any preferred browsers. Students can access the system and answer quizzes online from their home using a computer or laptop. The system is developed to adapt the way students answer quizzes during the Covid-19 pendemic. Quizium is not like other quizzes platforms. We focus on only applying for trivia type questions. This means that quizzes are open-for-anyone who has the code to access quizzes created by instructors. Students will gain access to the quizzes anytime between the duration or time allocated by their respective instructors and can only make one attempt per quiz. Instructors on the other hand can keep track of who answered the quizzes they created as well as being able to view report analysis on students’ performance. Students can view their score directly after they finish answering the quizzes.
 
+
 **INTERFACE**
 ---
 
